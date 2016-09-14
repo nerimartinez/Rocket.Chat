@@ -15,6 +15,8 @@ Template.adminUsers.helpers
 		return _.map(@emails, (e) -> e.address).join(', ')
 	profile: ->
 		return @services.facebook.link
+	pic: ->		
+		return @services.facebook.link.split('/')[4]
 
 Template.adminUsers.onCreated ->
 	instance = @
