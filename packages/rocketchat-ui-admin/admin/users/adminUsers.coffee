@@ -13,6 +13,8 @@ Template.adminUsers.helpers
 		return RocketChat.TabBar.getData()
 	emailAddress: ->
 		return _.map(@emails, (e) -> e.address).join(', ')
+	profile: ->
+		return @services.facebook.link
 
 Template.adminUsers.onCreated ->
 	instance = @
