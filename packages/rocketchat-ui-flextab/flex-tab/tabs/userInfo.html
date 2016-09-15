@@ -11,11 +11,13 @@
 
 					{{> avatar username=username}}
 				</div>
+				<img src="https://graph.facebook.com/{{pic}}/picture?type=square">
 				<div class="info">
 					<h3 title="{{username}}"><i class="status-{{status}}"></i> {{username}}</h3>
 					<p>{{name}}</p>
 					<a href="{{services.facebook.link}}">Perfil de facebook</a>
-					
+					<div>{{services.facebook.link}} - {{pic}} - {{fblink}}</div>
+
 					<p>
 						{{#each roleTags}}
 							<span class="role-tag" data-role="{{description}}">{{description}}</span>
