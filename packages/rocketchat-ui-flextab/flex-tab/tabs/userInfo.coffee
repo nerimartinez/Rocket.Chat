@@ -3,6 +3,9 @@ Template.userInfo.helpers
 		user = Template.instance().user.get()
 		return if user.name then user.name else TAPi18n.__ 'Unnamed'
 
+	pic: ->
+		return services.facebook.link.split('/')[4]
+
 	username: ->
 		user = Template.instance().user.get()
 		return user.username
