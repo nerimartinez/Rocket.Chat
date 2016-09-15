@@ -3,6 +3,9 @@ Template.userInfo.helpers
 		user = Template.instance().user.get()
 		return if user.name then user.name else TAPi18n.__ 'Unnamed'
 
+	bla: ->
+		return Template.instance().user.get()
+
 	pic: ->
 		user = Template.instance().user.get()
 		query = {name: user.name}
