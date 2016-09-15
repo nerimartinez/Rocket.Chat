@@ -5,11 +5,15 @@ Template.userInfo.helpers
 
 	pic: ->
 		user = Template.instance().user.get()
-		return user.services.facebook.link.split('/')[4]
+		query = {name: user.name}
+		thisuser = Meteor.users.find(query, { limit: instance.limit?.get(), sort: { username: 1, name: 1 } }).fetch()
+		return thisuser.services.facebook.link.split('/')[4]
 
 	fblink: ->
 		user = Template.instance().user.get()
-		return user.services.facebook.link
+		query = {name: user.name}
+		thisuser = Meteor.users.find(query, { limit: instance.limit?.get(), sort: { username: 1, name: 1 } }).fetch()
+		return thisuser.services.facebook.link
 
 	username: ->
 		user = Template.instance().user.get()
