@@ -9,13 +9,13 @@ Template.userInfo.helpers
 	pic: ->
 		user = Template.instance().user.get()
 		query = {name: user.name}
-		thisuser = Meteor.users.find(query, { limit: instance.limit?.get(), sort: { username: 1, name: 1 } }).fetch()
+		thisuser = Meteor.users.find(query, { limit: 1, sort: { username: 1, name: 1 } }).fetch()
 		return thisuser.services.facebook.link.split('/')[4]
 
 	fblink: ->
 		user = Template.instance().user.get()
 		query = {name: user.name}
-		thisuser = Meteor.users.find(query, { limit: instance.limit?.get(), sort: { username: 1, name: 1 } }).fetch()
+		thisuser = Meteor.users.find(query, { limit: 1, sort: { username: 1, name: 1 } }).fetch()
 		return thisuser.services.facebook.link
 
 	username: ->
